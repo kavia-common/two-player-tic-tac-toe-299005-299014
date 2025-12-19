@@ -4,7 +4,7 @@
   --text: #111827;          /* primary text */
   --muted: #64748b;         /* secondary text */
   --primary: #3b82f6;       /* blue */
-  --accent: #06b6d4;        /* cyan */
+  --accent: #06b6d4;        /* cyan (success) */
   --error: #ef4444;
   --border: #e5e7eb;
   --shadow: 0 10px 25px rgba(0,0,0,0.06);
@@ -89,6 +89,11 @@ body {
 
 .ttt-cell:active:not(:disabled) {
   transform: translateY(0px) scale(0.99);
+}
+
+.ttt-cell:focus-visible {
+  outline: 3px solid rgba(59,130,246,0.4);
+  outline-offset: 2px;
 }
 
 .ttt-cell:disabled {
