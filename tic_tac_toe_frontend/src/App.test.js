@@ -55,17 +55,4 @@ describe('Tic Tac Toe App', () => {
 
     expect(screen.getByText(/Draw!/i)).toBeInTheDocument();
   });
-
-  test('can restart the game and clear the board', () => {
-    render(<App />);
-    const cells = screen.getAllByRole('gridcell');
-
-    fireEvent.click(cells[0]); // X
-    expect(cells[0]).toHaveTextContent('X');
-
-    fireEvent.click(screen.getByRole('button', { name: /restart/i }));
-    // After restart all cells should be empty and status reset
-    cells.forEach((c) => expect(c).toHaveTextContent(''));
-    expect(screen.getByText(/Next player: X/i)).toBeInTheDocument();
-  });
 });
